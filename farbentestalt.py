@@ -2,7 +2,7 @@ import sys
 import RPi.GPIO as GPIO
 import time
 
-
+print("TEST")
 
 GPIO.setmode(GPIO.BCM)
 

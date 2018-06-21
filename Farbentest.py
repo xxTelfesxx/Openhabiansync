@@ -17,6 +17,8 @@ outputfile = open("colorstate.txt", "w")
 
 try:
 	os.kill(pidvorgaenger, signal.SIGKILL)
+	else:
+		print("es lauft nix")
 
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()

@@ -4,6 +4,8 @@ import time
 import numpy
 import os, signal
 
+speed = 0.02
+
 data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/colorstate.txt")
 ein_aus = int(data[0])
 status_red = int(data[1])
@@ -59,6 +61,12 @@ p_red.start(status_red)
 p_blue.start(status_blue)
 
 if brightness == 0:
+	for i in range(99):
+		p_green.ChangeDutyCycle(status_green + green_diff *i)
+		p_red.ChangeDutyCycle(status_red + red_diff *i)
+		p_blue.ChangeDutyCycle(status_blue + blue_diff *i)
+		time.sleep(speed)
+	
 	p_green.stop()
 	p_red.stop()
 	p_blue.stop()
@@ -69,7 +77,7 @@ else:
 		p_green.ChangeDutyCycle(status_green + green_diff *i)
 		p_red.ChangeDutyCycle(status_red + red_diff *i)
 		p_blue.ChangeDutyCycle(status_blue + blue_diff *i)
-		time.sleep(0.01)
+		time.sleep(speed)
 	
 	p_green.ChangeDutyCycle(green)
 	p_red.ChangeDutyCycle(red)

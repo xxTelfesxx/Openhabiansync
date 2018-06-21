@@ -12,8 +12,6 @@ status_blue = int(data[3])
 status_brightness = int(data[4])
 pidvorgaenger = int(data[5])
 
-outputfile = open("/home/openhabian/gitsync/Openhabiansync/colorstate.txt", "w")
-
 while True:
 	try:
 		if pidvorgaenger != 0:
@@ -80,7 +78,7 @@ else:
 
 print(red,green, blue,brightness)
 
-
+outputfile = open("/home/openhabian/gitsync/Openhabiansync/colorstate.txt", "w")
 outputfile.write(str(ein_aus) + "\n")
 outputfile.write(str(red) + "\n")
 outputfile.write(str(green) + "\n")
@@ -89,12 +87,4 @@ outputfile.write(str(brightness) + "\n")
 outputfile.write(str(os.getpid()) + "\n")
 outputfile.close()
 
-#time.sleep(8600)
-
-outputfile = open("colorstate.txt", "w")
-outputfile.write(str(ein_aus) + "\n")
-outputfile.write(str(red) + "\n")
-outputfile.write(str(green) + "\n")
-outputfile.write(str(blue) + "\n")
-outputfile.write(str(brightness) + "\n")
-outputfile.write("0" + "\n")
+time.sleep(8600)

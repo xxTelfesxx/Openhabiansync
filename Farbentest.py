@@ -23,9 +23,8 @@ while True:
 		pidvorgaenger = 0
 	
 GPIO.setmode(GPIO.BCM)
-GPIO.cleanup()
-comand_line_arg = sys.argv
 
+comand_line_arg = sys.argv
 
 green = float(comand_line_arg[1])
 red = float(comand_line_arg[2])

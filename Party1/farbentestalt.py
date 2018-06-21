@@ -1,12 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 
-def blink(zeit):
+def blink():
 	p_green.start(100)
 	p_red.start(100)
 	p_blue.start(100)
 	print("Blink")
-	time.sleep(zeit/1000)
+	time.sleep(0.01)
 	
 	p_green.stop()
 	p_red.stop()
@@ -35,7 +35,7 @@ print("2")
 time.sleep(1)
 print("1")
 time.sleep(1)
-
+print("GOOOOOOOOOOOO")
 
 for i in range(77):
 	inf = inputfile.readline()
@@ -45,7 +45,7 @@ for i in range(77):
 		zeitmessung = zeitmessung +0.001
 		time.sleep(0.001)
 	
-	blink(10)
+	blink()
 	zeitmessung = zeitmessung +0.01
 	
 

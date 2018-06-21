@@ -13,9 +13,12 @@ green = float(comand_line_arg[2])
 red = float(comand_line_arg[3])
 blue = float(comand_line_arg[4])
 
+
+
+GPIO.setup(18, GPIO.OUT) #gruen
 GPIO.setup(14, GPIO.OUT) #rot
 GPIO.setup(15, GPIO.OUT) #blau
-GPIO.setup(18, GPIO.OUT) #gruen
+
 
 
 p_red = GPIO.PWM(14, 100)

@@ -68,10 +68,10 @@ else:
 
 
 
-outputfile.write(ein_aus + "\n")
-outputfile.write(red + "\n")
-outputfile.write(green + "\n")
-outputfile.write(blue + "\n")
-outputfile.write(brightness + "\n")
+outputfile.write(str(ein_aus) + "\n")
+outputfile.write(str(red) + "\n")
+outputfile.write(str(green) + "\n")
+outputfile.write(str(blue) + "\n")
+outputfile.write(str(brightness) + "\n")
 
 outputfile.close()

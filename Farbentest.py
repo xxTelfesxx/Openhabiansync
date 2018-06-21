@@ -14,10 +14,10 @@ pidvorgaenger = int(data[5])
 
 outputfile = open("colorstate.txt", "w")
 
-
-try:
-	if pidvorgaenger != 0:
-		os.kill(pidvorgaenger, signal.SIGKILL)
+while True:
+	try:
+		if pidvorgaenger != 0:
+			os.kill(pidvorgaenger, signal.SIGKILL)
 		break
 	expcect ProcessLookupError:
 		pidvorgaenger = 0

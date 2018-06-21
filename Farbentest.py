@@ -58,7 +58,7 @@ else:
 		p_green.start(status_green + green_diff *i)
 		p_red.start(status_red + red_diff *i)
 		p_blue.start(status_blue + blue_diff *i)
-		time.wait(0.01)
+		time.sleep(0.01)
 	
 	p_green.start(green)
 	p_red.start(red)

@@ -15,10 +15,8 @@ pidvorgaenger = int(data[5])
 outputfile = open("colorstate.txt", "w")
 
 
-try:
+if pidvorgaenger != 0:
 	os.kill(pidvorgaenger, signal.SIGKILL)
-	else:
-		print("es lauft nix")
 
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
@@ -89,3 +87,11 @@ outputfile.write(str(os.getpid()) + "\n")
 outputfile.close()
 
 time.sleep(8600)
+
+outputfile = open("colorstate.txt", "w")
+outputfile.write(str(ein_aus) + "\n")
+outputfile.write(str(red) + "\n")
+outputfile.write(str(green) + "\n")
+outputfile.write(str(blue) + "\n")
+outputfile.write(str(brightness) + "\n")
+outputfile.write("0" + "\n")

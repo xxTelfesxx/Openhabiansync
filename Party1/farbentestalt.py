@@ -29,6 +29,14 @@ zeitmessung = 0
 
 inputfile = open("Textspur.txt")
 
+print("3")
+time.sleep(1)
+print("2")
+time.sleep(1)
+print("1")
+time.sleep(1)
+
+
 for i in range(77):
 	inf = inputfile.readline()
 	inf = float(inf[0:7])

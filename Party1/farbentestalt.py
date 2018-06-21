@@ -27,7 +27,7 @@ p_green = GPIO.PWM(18, 100)
 
 zeitmessung = 0
 
-inputfile = open(Textspur.txt)
+inputfile = open("Textspur.txt")
 
 for i in range(77):
 	inf = inputfile.readline()

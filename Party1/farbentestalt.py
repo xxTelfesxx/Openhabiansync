@@ -5,8 +5,8 @@ def blink(zeit):
 	p_green.start(100)
 	p_red.start(100)
 	p_blue.start(100)
-	
-	time.sleep(zeit)
+	print("Blink")
+	time.sleep(zeit/1000)
 	
 	p_green.stop()
 	p_red.stop()
@@ -35,7 +35,7 @@ for i in range(77):
 	
 	if zeitmessung < inf:
 		zeitmessung = zeitmessung +0.001
-		time.sleep(1)
+		time.sleep(0.001)
 	else:
 		blink(10)
 		zeitmessung = zeitmessung +0.01

@@ -19,7 +19,7 @@ while True:
 		if pidvorgaenger != 0:
 			os.kill(pidvorgaenger, signal.SIGKILL)
 		break
-	expcect ProcessLookupError:
+	except ProcessLookupError:
 		pidvorgaenger = 0
 	
 GPIO.setmode(GPIO.BCM)

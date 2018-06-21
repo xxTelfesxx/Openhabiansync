@@ -54,7 +54,7 @@ if brightness == 0:
 	GPIO.cleanup()
 	ein_aus = 0
 else:
-	for i in Range(99):
+	for i in range(99):
 		p_green.start(status_green + green_diff *i)
 		p_red.start(status_red + red_diff *i)
 		p_blue.start(status_blue + blue_diff *i)

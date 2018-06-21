@@ -32,10 +32,14 @@ red = float(comand_line_arg[2])
 blue = float(comand_line_arg[3])
 brightness = float(comand_line_arg[4])
 
-if green != 999 and red != 999 and blue != 999:
+if green != 999 and red != 999 and blue != 999 and status_brightness!= 0:
 	green = status_green/(status_brightness/100)
 	blue = status_blue/(status_brightness/100)
 	red = status_red/(status_brightness/100)
+else:
+	red = 0
+	green = 0
+	blue = 0
 
 
 

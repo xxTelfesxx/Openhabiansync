@@ -33,11 +33,11 @@ for i in range(77):
 	inf = inputfile.readline()
 	inf = float(inf[0:7])
 	
-	if zeitmessung < inf:
+	while zeitmessung < inf:
 		zeitmessung = zeitmessung +0.001
 		time.sleep(0.001)
-	else:
-		blink(10)
-		zeitmessung = zeitmessung +0.01
+	
+	blink(10)
+	zeitmessung = zeitmessung +0.01
 	
 

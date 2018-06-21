@@ -17,9 +17,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 comand_line_arg = sys.argv
 
-	p_green.start(status_green)
-	p_red.start(status_red)
-	p_blue.start(status_blue)
+p_green.start(status_green)
+p_red.start(status_red)
+p_blue.start(status_blue)
 
 green = float(comand_line_arg[1])
 red = float(comand_line_arg[2])

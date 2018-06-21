@@ -15,9 +15,13 @@ pidvorgaenger = int(data[5])
 outputfile = open("colorstate.txt", "w")
 
 
-if pidvorgaenger != 0:
-	os.kill(pidvorgaenger, signal.SIGKILL)
-
+try:
+	if pidvorgaenger != 0:
+		os.kill(pidvorgaenger, signal.SIGKILL)
+		break
+	expcect ProcessLookupError:
+		pidvorgaenger = 0
+	
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 comand_line_arg = sys.argv

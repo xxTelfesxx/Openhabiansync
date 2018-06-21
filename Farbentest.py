@@ -89,7 +89,7 @@ outputfile.write(str(brightness) + "\n")
 outputfile.write(str(os.getpid()) + "\n")
 outputfile.close()
 
-time.sleep(8600)
+#time.sleep(8600)
 
 outputfile = open("colorstate.txt", "w")
 outputfile.write(str(ein_aus) + "\n")

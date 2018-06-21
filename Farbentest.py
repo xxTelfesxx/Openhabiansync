@@ -14,8 +14,12 @@ outputfile = open("colorstate.txt", "w")
 
 
 GPIO.setmode(GPIO.BCM)
-
+GPIO.cleanup()
 comand_line_arg = sys.argv
+
+	p_green.start(status_green)
+	p_red.start(status_red)
+	p_blue.start(status_blue)
 
 green = float(comand_line_arg[1])
 red = float(comand_line_arg[2])
@@ -55,14 +59,14 @@ if brightness == 0:
 	ein_aus = 0
 else:
 	for i in range(99):
-		p_green.start(status_green + green_diff *i)
-		p_red.start(status_red + red_diff *i)
-		p_blue.start(status_blue + blue_diff *i)
+		p_green.ChangeDutyCycle(status_green + green_diff *i)
+		p_red.ChangeDutyCycle(status_red + red_diff *i)
+		p_blue.ChangeDutyCycle(status_blue + blue_diff *i)
 		time.sleep(0.01)
 	
-	p_green.start(green)
-	p_red.start(red)
-	p_blue.start(blue)
+	p_green.ChangeDutyCycle(green)
+	p_red.ChangeDutyCycle(red)
+	p_blue.ChangeDutyCycle(blue)
 
 
 

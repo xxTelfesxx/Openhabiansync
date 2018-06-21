@@ -78,7 +78,7 @@ else:
 	p_blue.ChangeDutyCycle(blue)
 
 
-
+print(red,green, blue,brightness)
 
 
 outputfile.write(str(ein_aus) + "\n")

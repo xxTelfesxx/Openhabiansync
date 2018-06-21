@@ -2,6 +2,7 @@ import sys
 import RPi.GPIO as GPIO
 import time
 import numpy
+import os, signal
 
 data = numpy.genfromtxt("colorstate.txt")
 ein_aus = int(data[0])
@@ -9,9 +10,13 @@ status_red = int(data[1])
 status_green = int(data[2])
 status_blue = int(data[3])
 status_brightness = int(data[4])
+pidvorgaenger = int(data[5])
 
 outputfile = open("colorstate.txt", "w")
 
+
+try:
+	os.kill(pidvorgaenger, signal.SIGKILL)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
@@ -78,5 +83,7 @@ outputfile.write(str(red) + "\n")
 outputfile.write(str(green) + "\n")
 outputfile.write(str(blue) + "\n")
 outputfile.write(str(brightness) + "\n")
-
+outputfile.write(str(os.getpid()) + "\n")
 outputfile.close()
+
+time.sleep(8600)

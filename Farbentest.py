@@ -8,10 +8,9 @@ GPIO.setmode(GPIO.BCM)
 
 comand_line_arg = sys.argv
 
-wartezeit = float(comand_line_arg[1])/1000
-green = float(comand_line_arg[2])
-red = float(comand_line_arg[3])
-blue = float(comand_line_arg[4])
+green = float(comand_line_arg[1])
+red = float(comand_line_arg[2])
+blue = float(comand_line_arg[3])
 
 
 
@@ -29,9 +28,3 @@ p_green = GPIO.PWM(18, 100)
 p_green.start(green)
 p_red.start(red)
 p_blue.start(blue)
-
-time.sleep(wartezeit)
-
-p_green.stop()
-p_red.stop()
-p_blue.stop()

@@ -38,7 +38,7 @@ zeitmessung = 0
 
 inputfile = open(Textspur.txt)
 
-for i in range(77)
+for i in range(77):
 	inf = inputfile.readline()
 	inf = float(inf[0:7])
 	

@@ -34,9 +34,9 @@ green = int(green * (brightness/100))
 blue = int(blue * (brightness/100))
 red = int(red * (brightness/100))
 
-green_diff = green - status_green
-blue_diff = blue - status_blue
-red_diff = red - status_red
+green_diff = (green - status_green)/100
+blue_diff = (blue - status_blue)/100
+red_diff = (red - status_red)/100
 
 
 GPIO.setup(18, GPIO.OUT) #gruen

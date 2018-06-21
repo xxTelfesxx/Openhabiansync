@@ -4,7 +4,7 @@ import time
 import numpy
 import os, signal
 
-data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansynccolorstate.txt")
+data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/colorstate.txt")
 ein_aus = int(data[0])
 status_red = int(data[1])
 status_green = int(data[2])
@@ -12,7 +12,7 @@ status_blue = int(data[3])
 status_brightness = int(data[4])
 pidvorgaenger = int(data[5])
 
-outputfile = open("/home/openhabian/gitsync/Openhabiansynccolorstate.txt", "w")
+outputfile = open("/home/openhabian/gitsync/Openhabiansync/colorstate.txt", "w")
 
 while True:
 	try:

@@ -34,12 +34,12 @@ inputfile = open("Textspur.txt")
 zeitstempel = []
 wartezeit = []
 
-for i in range(73):
+for i in range(51):
 	info = inputfile.readline()
 	zeitstempel.append((float(info[0:7])))
 
 	
-for ii in range(72):
+for ii in range(49):
 	wartezeit.append(zeitstempel[ii+1]-zeitstempel[ii])
 	
 	

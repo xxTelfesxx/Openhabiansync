@@ -27,8 +27,6 @@ p_blue = GPIO.PWM(15, 100)
 p_green = GPIO.PWM(18, 100)
 
 
-gpio_setup()
-
 zeitmessung = 0
 
 inputfile = open("Textspur.txt")

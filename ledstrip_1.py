@@ -51,9 +51,9 @@ GPIO.setup(23, GPIO.OUT) #gruen
 GPIO.setup(24, GPIO.OUT) #rot
 GPIO.setup(25, GPIO.OUT) #blau
 
-p_red = GPIO.PWM(24, 100)
+p_red = GPIO.PWM(25, 100)
 p_blue = GPIO.PWM(23, 100)
-p_green = GPIO.PWM(25, 100)
+p_green = GPIO.PWM(24, 100)
 
 p_green.start(status_green)
 p_red.start(status_red)

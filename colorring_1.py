@@ -6,7 +6,7 @@ import os, signal
 
 speed = 0.02
 
-data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/colorstate.txt")
+data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/ring1_colorstate.txt")
 ein_aus = int(data[0])
 status_red = int(data[1])
 status_green = int(data[2])
@@ -85,7 +85,7 @@ else:
 
 print(red,green, blue,brightness)
 
-outputfile = open("/home/openhabian/gitsync/Openhabiansync/colorstate.txt", "w")
+outputfile = open("/home/openhabian/gitsync/Openhabiansync/ring1_colorstate.txt", "w")
 outputfile.write(str(ein_aus) + "\n")
 outputfile.write(str(red) + "\n")
 outputfile.write(str(green) + "\n")

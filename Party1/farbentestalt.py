@@ -1,4 +1,4 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import os
 
@@ -27,7 +27,7 @@ def gpio_setup():
 	p_green = GPIO.PWM(18, 100)
 
 
-#gpio_setup()
+gpio_setup()
 
 zeitmessung = 0
 
@@ -63,8 +63,8 @@ print(wartezeit)
 for iwartezeit in wartezeit:
 	time.sleep(iwartezeit-0.02)
 		
-	#blink()
-	print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
-	print(" ")
+	blink()
+	#print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")
+	#print(" ")
 	
 

@@ -13,18 +13,18 @@ def blink():
 	p_red.stop()
 	p_blue.stop()
 
-def gpio_setup():
-	GPIO.setmode(GPIO.BCM)
+
+GPIO.setmode(GPIO.BCM)
 
 
-	GPIO.setup(18, GPIO.OUT) #gruen
-	GPIO.setup(14, GPIO.OUT) #rot
-	GPIO.setup(15, GPIO.OUT) #blau
+GPIO.setup(18, GPIO.OUT) #gruen
+GPIO.setup(14, GPIO.OUT) #rot
+GPIO.setup(15, GPIO.OUT) #blau
 
 
-	p_red = GPIO.PWM(14, 100)
-	p_blue = GPIO.PWM(15, 100)
-	p_green = GPIO.PWM(18, 100)
+p_red = GPIO.PWM(14, 100)
+p_blue = GPIO.PWM(15, 100)
+p_green = GPIO.PWM(18, 100)
 
 
 gpio_setup()
@@ -54,7 +54,7 @@ print("1")
 time.sleep(1)
 print("GOOOOOOOOOOOO")
 
-os.system("start does_your_mother_knowcut.mp3")
+os.system('mpg321 does_your_mother_knowcut.mp3 &')
 
 time.sleep(0.01)
 

@@ -59,7 +59,7 @@ time.sleep(0.01)
 print(wartezeit)
 
 for iwartezeit in wartezeit:
-	time.sleep(iwartezeit-0.02)
+	time.sleep(iwartezeit-0.01)
 		
 	blink()
 	#print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")

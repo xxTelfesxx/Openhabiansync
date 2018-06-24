@@ -23,10 +23,10 @@ nametxt = str(comand_line_arg[1])
 gpio_gruen = int(comand_line_arg[2])
 gpio_rot = int(comand_line_arg[3])
 gpio_blau = int(comand_line_arg[4])
-helligkeit = float(comand_line_arg[4])
-gruen_neu = float(comand_line_arg[4])
-rot_neu = float(comand_line_arg[4])
-blau_neu = float(comand_line_arg[4])
+helligkeit = float(comand_line_arg[5])
+gruen_neu = float(comand_line_arg[6])
+rot_neu = float(comand_line_arg[7])
+blau_neu = float(comand_line_arg[8])
 
 speed = 0.02
 keepactive = True
@@ -72,9 +72,9 @@ if wechselprozess == 0:
 	if helligkeit == 0:
 		for i in range(99):
 			helligkeit_now = status_brightness +helligkeit_diff*i
-			p_green.ChangeDutyCycle(status_green + green_diff *i)
-			p_red.ChangeDutyCycle(status_red + red_diff *i)
-			p_blue.ChangeDutyCycle(status_blue + blue_diff *i)
+			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
+			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
+			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
 			time.sleep(speed)
 	
 		p_green.stop()
@@ -84,9 +84,10 @@ if wechselprozess == 0:
 		keepactive = False
 	else:
 		for i in range(99):
-			p_green.ChangeDutyCycle(status_green + green_diff *i)
-			p_red.ChangeDutyCycle(status_red + red_diff *i)
-			p_blue.ChangeDutyCycle(status_blue + blue_diff *i)
+			helligkeit_now = status_brightness +helligkeit_diff*i
+			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
+			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
+			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
 			time.sleep(speed)
 	
 		p_green.ChangeDutyCycle(gruen_neu)
@@ -94,7 +95,7 @@ if wechselprozess == 0:
 		p_blue.ChangeDutyCycle(blau_neu)
 		keepactive = True
 
-
+	print("Rot, gruen, blau, helligkeit")
 	print(rot_neu,gruen_neu, blau_neu,helligkeit)
 
 	outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")

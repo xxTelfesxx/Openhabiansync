@@ -39,6 +39,16 @@ status_blue = int(data[3])
 status_brightness = int(data[4])
 pid_old = int(data[5])
 
+if helligkeit == 999:
+	helligkeit = status_brightness
+if gruen_neu == 999:
+	gruen_neu = status_green
+if rot_neu == 999:
+	rot_neu = status_red
+if blau_neu == 999:
+	blau_neu = status_blue
+
+
 if wechselprozess == 0:
 	outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
 	outputfile.write("1" + "\n")

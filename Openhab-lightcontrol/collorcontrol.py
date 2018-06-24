@@ -31,7 +31,7 @@ blau_neu = float(comand_line_arg[4])
 speed = 0.02
 keepactive = True
 
-data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/Penhab-lightcontrol/" + nametxt + "_colorstate.txt")
+data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt")
 wechselprozess = int(data[0])
 status_red = int(data[1])
 status_green = int(data[2])
@@ -40,7 +40,7 @@ status_brightness = int(data[4])
 pid_old = int(data[5])
 
 if wechselprozess == 0:
-	outputfile = open("/home/openhabian/gitsync/Openhabiansync/ring1_colorstate.txt", "w")
+	outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
 	outputfile.write("1" + "\n")
 	outputfile.write(str(status_red) + "\n")
 	outputfile.write(str(status_green) + "\n")
@@ -97,7 +97,7 @@ if wechselprozess == 0:
 
 	print(red,green, blue,brightness)
 
-	outputfile = open("/home/openhabian/gitsync/Openhabiansync/ring1_colorstate.txt", "w")
+	outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
 	outputfile.write("0" + "\n")
 	outputfile.write(str(red) + "\n")
 	outputfile.write(str(green) + "\n")

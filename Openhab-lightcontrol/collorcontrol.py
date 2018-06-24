@@ -90,9 +90,9 @@ if wechselprozess == 0:
 			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
 			time.sleep(speed)
 	
-		p_green.ChangeDutyCycle(gruen_neu)
-		p_red.ChangeDutyCycle(rot_neu)
-		p_blue.ChangeDutyCycle(blau_neu)
+		p_green.ChangeDutyCycle(gruen_neu *helligkeit/100)
+		p_red.ChangeDutyCycle(rot_neu*helligkeit/100)
+		p_blue.ChangeDutyCycle(blau_neu*helligkeit/100)
 		keepactive = True
 
 	print("Rot, gruen, blau, helligkeit")

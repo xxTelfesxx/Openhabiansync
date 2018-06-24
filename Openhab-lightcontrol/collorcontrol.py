@@ -71,7 +71,7 @@ if wechselprozess == 0:
 
 	if helligkeit == 0:
 		for i in range(99):
-			helligkeit_now = status_brightness +helligkeit_diff*i
+			helligkeit_now = /100 +helligkeit_diff*i
 			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
 			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
 			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
@@ -84,7 +84,7 @@ if wechselprozess == 0:
 		keepactive = False
 	else:
 		for i in range(99):
-			helligkeit_now = status_brightness +helligkeit_diff*i
+			helligkeit_now = status_brightness/100 +helligkeit_diff*i
 			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
 			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
 			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)

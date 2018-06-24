@@ -1,0 +1,1 @@
+google-assistant-demo --device-model-id assistant-pi-208014-pi-assistant-b2ye28 --project-id assistant-pi-208014 --credentials ~/.config/google-oauthlib-tool/credentials.json

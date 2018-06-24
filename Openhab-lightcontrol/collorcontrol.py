@@ -6,12 +6,12 @@ import os, signal
 
 def killoldeversion(pid_old):
 	while True:
-	try:
-		if pid_old != 0:
-			os.kill(pid_old, signal.SIGKILL)
-		break
-	except ProcessLookupError:
-		pid_old = 0
+		try:
+			if pid_old != 0:
+				os.kill(pid_old, signal.SIGKILL)
+			break
+		except ProcessLookupError:
+			pid_old = 0
 
 # eingabe: [Name txt Datei] [GPIO Bin Gruen] [GPIO Bin blau] [GPIO Bin rot] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
 

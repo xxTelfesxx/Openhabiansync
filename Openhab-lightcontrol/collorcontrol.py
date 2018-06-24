@@ -72,9 +72,9 @@ if wechselprozess == 0:
 	if helligkeit == 0:
 		for i in range(99):
 			helligkeit_now = (status_brightness +helligkeit_diff*i)/100
-			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
-			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
-			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
+			p_green.ChangeDutyCycle((status_green + green_diff *i)*helligkeit_now)
+			p_red.ChangeDutyCycle((status_red + red_diff *i)*helligkeit_now)
+			p_blue.ChangeDutyCycle((status_blue + blue_diff *i)*helligkeit_now)
 			time.sleep(speed)
 	
 		p_green.stop()
@@ -85,9 +85,9 @@ if wechselprozess == 0:
 	else:
 		for i in range(99):
 			helligkeit_now = (status_brightness +helligkeit_diff*i)/100
-			p_green.ChangeDutyCycle(status_green + green_diff *i*helligkeit_now)
-			p_red.ChangeDutyCycle(status_red + red_diff *i*helligkeit_now)
-			p_blue.ChangeDutyCycle(status_blue + blue_diff *i*helligkeit_now)
+			p_green.ChangeDutyCycle((status_green + green_diff *i)*helligkeit_now)
+			p_red.ChangeDutyCycle((status_red + red_diff *i)*helligkeit_now)
+			p_blue.ChangeDutyCycle((status_blue + blue_diff *i)*helligkeit_now)
 			time.sleep(speed)
 	
 		p_green.ChangeDutyCycle(gruen_neu *helligkeit/100)

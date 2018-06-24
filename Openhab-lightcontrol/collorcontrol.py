@@ -69,7 +69,7 @@ if wechselprozess == 0:
 	p_red.start(status_red)
 	p_blue.start(status_blue)
 
-	if brightness == 0:
+	if helligkeit == 0:
 		for i in range(99):
 			helligkeit_now = status_brightness +helligkeit_diff*i
 			p_green.ChangeDutyCycle(status_green + green_diff *i)
@@ -95,14 +95,14 @@ if wechselprozess == 0:
 		keepactive = True
 
 
-	print(red,green, blue,brightness)
+	print(red,green, blue,helligkeit)
 
 	outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
 	outputfile.write("0" + "\n")
 	outputfile.write(str(red) + "\n")
 	outputfile.write(str(green) + "\n")
 	outputfile.write(str(blue) + "\n")
-	outputfile.write(str(brightness) + "\n")
+	outputfile.write(str(helligkeit) + "\n")
 	outputfile.write(str(os.getpid()) + "\n")
 	outputfile.close()
 

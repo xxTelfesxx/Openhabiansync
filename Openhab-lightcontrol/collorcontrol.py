@@ -29,7 +29,7 @@ rot_neu = float(comand_line_arg[7])
 blau_neu = float(comand_line_arg[8])
 
 speed = 0.02
-keepactive = True
+
 
 data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt")
 wechselprozess = int(data[0])
@@ -91,7 +91,8 @@ if wechselprozess == 0:
 		p_red.stop()
 		p_blue.stop()
 		GPIO.cleanup()
-		keepactive = False
+		exit()
+
 	else:
 		for i in range(99):
 			helligkeit_now = (status_brightness +helligkeit_diff*i)/100
@@ -103,7 +104,7 @@ if wechselprozess == 0:
 		p_green.ChangeDutyCycle(gruen_neu *helligkeit/100)
 		p_red.ChangeDutyCycle(rot_neu*helligkeit/100)
 		p_blue.ChangeDutyCycle(blau_neu*helligkeit/100)
-		keepactive = True
+
 
 	print("Rot, gruen, blau, helligkeit")
 	print(rot_neu,gruen_neu, blau_neu,helligkeit)
@@ -117,10 +118,7 @@ if wechselprozess == 0:
 	outputfile.write(str(os.getpid()) + "\n")
 	outputfile.close()
 
-	
-	if keepactive:
-		time.sleep(86000)
-	else:
-		print("Schalte aus")
+	time.sleep(86000)
+
 else:
 	print("Eine Instanz läuft bereits")

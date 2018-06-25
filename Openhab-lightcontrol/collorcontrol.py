@@ -99,6 +99,7 @@ if wechselprozess == 0:
 		outputfile.write(str(helligkeit) + "\n")
 		outputfile.write(str(os.getpid()) + "\n")
 		outputfile.close()
+		print("Lampen aus")
 		exit()
 
 	else:

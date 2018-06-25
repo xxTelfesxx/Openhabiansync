@@ -91,6 +91,14 @@ if wechselprozess == 0:
 		p_red.stop()
 		p_blue.stop()
 		GPIO.cleanup()
+		outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
+		outputfile.write("0" + "\n")
+		outputfile.write(str(rot_neu) + "\n")
+		outputfile.write(str(gruen_neu) + "\n")
+		outputfile.write(str(blau_neu) + "\n")
+		outputfile.write(str(helligkeit) + "\n")
+		outputfile.write(str(os.getpid()) + "\n")
+		outputfile.close()
 		exit()
 
 	else:

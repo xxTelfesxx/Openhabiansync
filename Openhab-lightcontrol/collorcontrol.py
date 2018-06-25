@@ -12,43 +12,8 @@ def killoldeversion(pid_old):
 			break
 		except ProcessLookupError:
 			pid_old = 0
-
-def hsb_to_rgb(h,s,v):
-
-    i = numpy.floor(h*6)
-    f = h*6 -i
-    p = v * (1-s)
-    q = v * (1-f*s)
-    t = v * (1-(1-f)*s)
-    x = i%6
-    if i == 0:
-        red = v
-        green = t
-        blue = p
-    if i == 1:
-        red = q
-        green = v
-        blue = p
-    if i == 2:
-        red = p
-        green = v
-        blue = t
-    if i == 3:
-        red = p
-        green = q
-        blue = v
-    if i == 4:
-        red = t
-        green = p
-        blue = v
-    if i == 5:
-        red = v
-        green = p
-        blue = q
-
-    return red*100,green*100, blue*100
 			
-# eingabe: [Name txt Datei] [GPIO Bin Gruen] [GPIO Bin blau] [GPIO Bin rot] [Helligkeit in %] ["rgb" oder "hsb"][Gruen in % / hue] [Rot in % / saturation] [Blau in % / lightness]
+# eingabe: [Name txt Datei] [GPIO Bin Gruen] [GPIO Bin blau] [GPIO Bin rot] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
 
 GPIO.setmode(GPIO.BCM)
 
@@ -59,18 +24,10 @@ gpio_gruen = int(comand_line_arg[2])
 gpio_rot = int(comand_line_arg[3])
 gpio_blau = int(comand_line_arg[4])
 helligkeit = int(comand_line_arg[5])
-colorsystem = str(comand_line_arg[6])
+gruen_neu = float(comand_line_arg[6])
+rot_neu = float(comand_line_arg[7])
+blau_neu = float(comand_line_arg[8])
 
-if colorsystem == "rgb":
-	gruen_neu = float(comand_line_arg[7])
-	rot_neu = float(comand_line_arg[8])
-	blau_neu = float(comand_line_arg[9])
-elif colorsystem == "hsb":
-	hue = float(comand_line_arg[7])
-	saturation = float(comand_line_arg[8])
-	lightness = float(comand_line_arg[9])
-	
-	rot_neu,gruen_neu,blau_neu = hsb_to_rgb(hue/360,saturation/100,lightness/100)
 
 speed = 0.02
 

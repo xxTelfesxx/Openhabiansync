@@ -66,7 +66,7 @@ if colorsystem == "rgb":
 	gruen_neu = float(comand_line_arg[7])
 	rot_neu = float(comand_line_arg[8])
 	blau_neu = float(comand_line_arg[9])
-elif colorsystem == "hsb"
+elif colorsystem == "hsb":
 	hue = float(comand_line_arg[7])
 	saturation = float(comand_line_arg[8])
 	lightness = float(comand_line_arg[9])

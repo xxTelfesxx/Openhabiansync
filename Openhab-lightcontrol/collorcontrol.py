@@ -13,20 +13,17 @@ def killoldeversion(pid_old):
 		except ProcessLookupError:
 			pid_old = 0
 			
-# eingabe: [Name txt Datei] [GPIO Bin Gruen] [GPIO Bin blau] [GPIO Bin rot] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
+# eingabe: [Name txt Datei] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
 
 GPIO.setmode(GPIO.BCM)
 
 comand_line_arg = sys.argv
 
 nametxt = str(comand_line_arg[1])
-gpio_gruen = int(comand_line_arg[2])
-gpio_rot = int(comand_line_arg[3])
-gpio_blau = int(comand_line_arg[4])
-helligkeit = int(comand_line_arg[5])
-gruen_neu = float(comand_line_arg[6])
-rot_neu = float(comand_line_arg[7])
-blau_neu = float(comand_line_arg[8])
+helligkeit = int(comand_line_arg[2])
+gruen_neu = float(comand_line_arg[3])
+rot_neu = float(comand_line_arg[4])
+blau_neu = float(comand_line_arg[5])
 
 
 speed = 0.02
@@ -39,6 +36,9 @@ status_green = int(data[2])
 status_blue = int(data[3])
 status_brightness = int(data[4])
 pid_old = int(data[5])
+gpio_gruen = int(data[6])
+gpio_rot = int(data[7])
+gpio_blau = int(data[8])
 
 if helligkeit == 999:
 	helligkeit = status_brightness
@@ -58,6 +58,9 @@ if wechselprozess == 0:
 	outputfile.write(str(status_blue) + "\n")
 	outputfile.write(str(status_brightness) + "\n")
 	outputfile.write(str(os.getpid()) + "\n")
+	outputfile.write(str(gpio_gruen) + "\n")
+	outputfile.write(str(gpio_rot) + "\n")
+	outputfile.write(str(gpio_blau) + "\n")
 	outputfile.close()
 
 
@@ -99,6 +102,9 @@ if wechselprozess == 0:
 		outputfile.write(str(blau_neu) + "\n")
 		outputfile.write(str(helligkeit) + "\n")
 		outputfile.write(str(os.getpid()) + "\n")
+		outputfile.write(str(gpio_gruen) + "\n")
+		outputfile.write(str(gpio_rot) + "\n")
+		outputfile.write(str(gpio_blau) + "\n")
 		outputfile.close()
 		print("Lampen aus")
 		exit()
@@ -111,9 +117,9 @@ if wechselprozess == 0:
 			p_blue.ChangeDutyCycle((status_blue + blue_diff *i)*helligkeit_now)
 			time.sleep(speed)
 	
-		p_green.ChangeDutyCycle(int(gruen_neu * helligkeit/100))
-		p_red.ChangeDutyCycle(int(rot_neu * helligkeit/100))
-		p_blue.ChangeDutyCycle(int(blau_neu * helligkeit/100))
+		p_green.ChangeDutyCycle(gruen_neu * helligkeit/100)
+		p_red.ChangeDutyCycle(rot_neu * helligkeit/100)
+		p_blue.ChangeDutyCycle(blau_neu * helligkeit/100)
 
 
 	print("Rot, gruen, blau, helligkeit")
@@ -126,6 +132,9 @@ if wechselprozess == 0:
 	outputfile.write(str(blau_neu) + "\n")
 	outputfile.write(str(helligkeit) + "\n")
 	outputfile.write(str(os.getpid()) + "\n")
+	outputfile.write(str(gpio_gruen) + "\n")
+	outputfile.write(str(gpio_rot) + "\n")
+	outputfile.write(str(gpio_blau) + "\n")
 	outputfile.close()
 
 	time.sleep(86000)

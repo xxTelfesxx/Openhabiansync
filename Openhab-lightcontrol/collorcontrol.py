@@ -120,5 +120,7 @@ if wechselprozess == 0:
 	
 	if keepactive:
 		time.sleep(86000)
+	else:
+		print("Schalte aus")
 else:
 	print("Eine Instanz läuft bereits")

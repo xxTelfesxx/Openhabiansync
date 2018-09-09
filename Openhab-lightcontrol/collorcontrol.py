@@ -84,9 +84,9 @@ p_red = GPIO.PWM(gpio_rot, 100)
 p_blue = GPIO.PWM(gpio_blau, 100)
 p_green = GPIO.PWM(gpio_gruen, 100)
 
-p_green.start(status_green)
-p_red.start(status_red)
-p_blue.start(status_blue)
+p_green.start(status_green *helligkeit/100)
+p_red.start(status_red*helligkeit/100)
+p_blue.start(status_blue*helligkeit/100)
 
 
 

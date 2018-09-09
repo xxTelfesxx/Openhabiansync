@@ -28,7 +28,7 @@ def sinus2(x):
 
 
 			
-# eingabe: [Name txt Datei] [Mode,0 = Aus, 1 = Color static, 2 = colorfading, 999 = unverändert] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
+# eingabe: [Name txt Datei] [Mode,0 = Aus, 1 = Color static, 2 = colorfading, 999 = unveraendert] [Helligkeit in %] [Gruen in %] [Rot in %] [Blau in %]
 
 GPIO.setmode(GPIO.BCM)
 
@@ -57,7 +57,7 @@ gpio_rot = int(data[7])
 gpio_blau = int(data[8])
 
 
-#unverändert - daten aus datei für werte setzen
+#unveraendert - daten aus datei fuer werte setzen
 if helligkeit == 999:
         helligkeit = status_brightness
 if gruen_neu == 999:
@@ -72,7 +72,7 @@ if mode = 0: #auschalten
         mode = 1
         helligkeit = 0
 
-speed = 0.02  #zum esintellen für user
+speed = 0.02  #zum esintellen fuer user
 
 killoldeversion(pid_old)
 

@@ -175,11 +175,11 @@ elif mode == 2:
         
         while True:
                 p_green.ChangeDutyCycle(sinus(counter) * helligkeit/100)
-		p_red.ChangeDutyCycle(sinus(counter+120) * helligkeit/100)
-		p_blue.ChangeDutyCycle(sinus(counter+240) * helligkeit/100)
+                p_red.ChangeDutyCycle(sinus(counter+120) * helligkeit/100)
+                p_blue.ChangeDutyCycle(sinus(counter+240) * helligkeit/100)
 
-		time.sleep(0.002)
-		counter = counter +1
+                time.sleep(0.002)
+                counter = counter +1
                 
 
 

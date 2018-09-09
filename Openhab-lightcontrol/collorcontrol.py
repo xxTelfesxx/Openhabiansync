@@ -66,9 +66,9 @@ if rot_neu == 999:
         rot_neu = status_red
 if blau_neu == 999:
         blau_neu = status_blue
-if mode = 999:
+if mode == 999:
         mode = mode_old
-if mode = 0: #auschalten
+if mode == 0: #auschalten
         mode = 1
         helligkeit = 0
 

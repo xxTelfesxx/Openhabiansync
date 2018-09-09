@@ -161,16 +161,16 @@ elif mode == 2:
 
         outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
         outputfile.write("2" + "\n")
-	outputfile.write(str(rot_neu) + "\n")
-	outputfile.write(str(gruen_neu) + "\n")
-	outputfile.write(str(blau_neu) + "\n")
-	outputfile.write(str(helligkeit) + "\n")
-	outputfile.write(str(os.getpid()) + "\n")
-	outputfile.write(str(gpio_gruen) + "\n")
-	outputfile.write(str(gpio_rot) + "\n")
-	outputfile.write(str(gpio_blau) + "\n")
-	outputfile.close()
-	
+        outputfile.write(str(rot_neu) + "\n")
+        outputfile.write(str(gruen_neu) + "\n")
+        outputfile.write(str(blau_neu) + "\n")
+        outputfile.write(str(helligkeit) + "\n")
+        outputfile.write(str(os.getpid()) + "\n")
+        outputfile.write(str(gpio_gruen) + "\n")
+        outputfile.write(str(gpio_rot) + "\n")
+        outputfile.write(str(gpio_blau) + "\n")
+        outputfile.close()
+
         counter = 0
         
         while True:

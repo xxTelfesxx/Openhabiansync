@@ -179,6 +179,7 @@ elif mode = 2:
 		p_blue.ChangeDutyCycle(sinus(counter+240) * helligkeit/100)
 
 		time.sleep(0.002)
+		counter = counter +1
                 
 
 

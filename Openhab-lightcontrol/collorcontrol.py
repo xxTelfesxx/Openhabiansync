@@ -160,7 +160,7 @@ if mode == 1:
 elif mode == 2:
 
         outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
-	outputfile.write("2" + "\n")
+        outputfile.write("2" + "\n")
 	outputfile.write(str(rot_neu) + "\n")
 	outputfile.write(str(gruen_neu) + "\n")
 	outputfile.write(str(blau_neu) + "\n")

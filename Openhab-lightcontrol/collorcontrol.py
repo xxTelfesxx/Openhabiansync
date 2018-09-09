@@ -157,7 +157,7 @@ if mode == 1:
 
 	time.sleep(86000)
 
-elif mode = 2:
+elif mode == 2:
 
         outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + "_colorstate.txt", "w")
 	outputfile.write("2" + "\n")

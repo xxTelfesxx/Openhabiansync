@@ -1,4 +1,5 @@
 import numpy
+import sys
 			
 # eingabe: [Name txt Datei] [Stunden] [Minuten]
 

@@ -14,7 +14,7 @@ vergleich =str(comand_line_arg[5])
 outputfile = open("/etc/openhab2/rules/" + nametxt + ".rules", "w")
 		
 
-outputfile.write('rule "Abendallarm"' + "\n")
+outputfile.write('rule "' + vergleich + ' rule"' + "\n")
 outputfile.write('when Time cron "0 ' + minuten +" " + stunden + ' 1/1 * ? *"' + "\n")
 outputfile.write("then" + "\n")
 outputfile.write("if (" + vergleich + ".state==1){" + "\n")

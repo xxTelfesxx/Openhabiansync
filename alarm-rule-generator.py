@@ -14,7 +14,7 @@ outputfile = open("/etc/openhab2/rules/" + nametxt + ".rules", "w")
 		
 
 outputfile.write('Rule "Abendallarm"' + "\n")
-outputfile.write('when Time cron 0 ' + minuten +" " + stunden + "* * ? *" + "\n")
+outputfile.write('when Time cron "0 ' + minuten +" " + stunden + ' 1/1 * ? *"' + "\n")
 outputfile.write("then Blinds_controll=2" + "\n")
 outputfile.write("end")
 outputfile.close()

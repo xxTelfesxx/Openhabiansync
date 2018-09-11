@@ -1,0 +1,81 @@
+Color led_strip "LED Strip" [ "Lighting" ]
+Color ring_1 "Ring 1" [ "Lighting" ]
+
+Color Colorforalllights "Color all lights"
+
+rule "Settings for all lights:"
+when
+        Item Colorforalllights received command
+then
+        Thread::sleep(100)
+        ring_1.sendCommand((Colorforalllights.state.toString))
+        led_strip.sendCommand((Colorforalllights.state.toString))
+
+end
+
+
+rule "ring_1 Change"
+when
+     Item ring_1 received command
+then
+      if (receivedCommand instanceof HSBType)
+      {
+        Thread::sleep(100)
+            val String blue = (ring_1.state as HSBType).getBlue.toString
+            val String green = (ring_1.state as HSBType).getGreen.toString
+            val String red = (ring_1.state as HSBType).getRed.toString
+
+            logInfo(" ","Ring 1 Colors: (b/g/r): " + blue + " " + green + " " + red)
+            val String results =  executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightc$
+            logInfo("Ergebniss command: ",results)
+      }
+      else if (receivedCommand == ON){
+            //logInfo("WS Status",  "ON")
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+      else if (receivedCommand == OFF){
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+      else {
+        logInfo(" ","Heliigkeitswechsel zu " + (ring_1.state as HSBType).getBrightness.toString)
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+end
+
+rule "LED_Strip Change"
+when
+     Item led_strip received command
+then
+      if (receivedCommand instanceof HSBType)
+      {
+            Thread::sleep(100)
+            val String blue = (led_strip.state as HSBType).getBlue.toString
+            val String green = (led_strip.state as HSBType).getGreen.toString
+            val String red = (led_strip.state as HSBType).getRed.toString
+
+
+            logInfo(" ","LED Strip Colors: (b/g/r): "+blue+" "+green+" "+red )
+            logInfo(" ","python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/collorcontrol.py ledst$
+            val String results =  executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightc$
+            logInfo("Ergebniss command: ",results)
+      }
+      else if (receivedCommand == ON){
+            //logInfo("WS Status",  "ON")
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+      else if (receivedCommand == OFF){
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+
+      else {
+        logInfo(" ","Heliigkeitswechsel zu " + (led_strip.state as HSBType).getBrightness.toString)
+        val String results = executeCommandLine("python3 /home/openhabian/gitsync/Openhabiansync/Openhab-lightcontro$
+        logInfo("Ergebniss command: ",results)
+}
+end
+

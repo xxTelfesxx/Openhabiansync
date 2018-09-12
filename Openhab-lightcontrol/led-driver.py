@@ -5,7 +5,7 @@ import numpy
 import math
 import os, signal
 
-def waitinput()
+def waitinput():
         for x in range (10800):
                 data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + ".txt")
                 update = int(data[9])

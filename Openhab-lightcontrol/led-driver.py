@@ -53,6 +53,8 @@ gpio_rot = int(data[7])
 gpio_blau = int(data[8])
 update = 1
 
+brightness_new = brightness_new/100
+
 GPIO.setup(gpio_gruen, GPIO.OUT) #gruen
 GPIO.setup(gpio_rot, GPIO.OUT) #rot
 GPIO.setup(gpio_blau, GPIO.OUT) #blau

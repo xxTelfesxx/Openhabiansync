@@ -90,7 +90,7 @@ while mode != 0:
                 helligkeit_diff = (brightness_new - brightness)/100
 
                 for i in range(99):
-                	brightness = brightness + helligkeit_diff
+                        brightness = brightness + helligkeit_diff
                         blue = blue + blue_diff
                         green = green + green_diff
                         red = red + red_diff
@@ -105,13 +105,13 @@ while mode != 0:
                 red = red_new
                 blue = blue_new
                 brightness = brightness_new
-	
+                
                 p_green.ChangeDutyCycle(green * brightness)
                 p_red.ChangeDutyCycle(red * brightness)
                 p_blue.ChangeDutyCycle(blue * brightness)
-
-
-
+                
+                
+                
                 print("Rot, gruen, blau, helligkeit")
                 print(red ,green, blue ,brightness)
 

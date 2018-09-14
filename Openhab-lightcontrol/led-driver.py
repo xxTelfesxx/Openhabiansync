@@ -42,7 +42,7 @@ brightness = 0
 
 
 data = numpy.genfromtxt("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + ".txt")
-mode_new = int(data[0])
+mode = int(data[0])
 red_new = int(data[1])
 green_new = int(data[2])
 blue_new = int(data[3]) 

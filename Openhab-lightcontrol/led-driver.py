@@ -115,7 +115,7 @@ while mode != 0:
                 print("Rot, gruen, blau, helligkeit")
                 print(red ,green, blue ,brightness)
 
-                outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + .txt", "w")
+                outputfile = open("/home/openhabian/gitsync/Openhabiansync/Openhab-lightcontrol/" + nametxt + ".txt", "w")
                 outputfile.write(mode + "\n")
                 outputfile.write(str(red_new) + "\n")
                 outputfile.write(str(green_new) + "\n")

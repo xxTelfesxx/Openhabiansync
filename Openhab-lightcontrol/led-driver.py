@@ -78,7 +78,7 @@ p_red.start(red*brightness)
 p_blue.start(blue*brightness)
 
 
-while mode =! 0:
+while mode != 0:
         
 
         if mode == 1:

@@ -95,12 +95,12 @@ while mode != 0:
                         green = green + green_diff
                         red = red + red_diff
 
-                	
-                	p_green.ChangeDutyCycle(green * brightness)
-                	p_red.ChangeDutyCycle(red * brightness)
-                	p_blue.ChangeDutyCycle(blue * brightness)
-                	time.sleep(speed)
-
+                                 	
+                        p_green.ChangeDutyCycle(green * brightness)
+                        p_red.ChangeDutyCycle(red * brightness)
+                        p_blue.ChangeDutyCycle(blue * brightness)
+                        time.sleep(speed)
+                
                 green = green_new
                 red = red_new
                 blue = blue_new

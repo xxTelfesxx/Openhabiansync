@@ -161,6 +161,7 @@ p_green.stop()
 p_red.stop()
 p_blue.stop()
 GPIO.cleanup()
+print("Driver off")
 
 
 
